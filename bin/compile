@@ -5,7 +5,14 @@ ENV_DIR="$3"
 
 PRODUCT=$(<"$ENV_DIR/PRODUCT")
 
+CERTIFICATE_DIR="$APP_DIR/$PRODUCT/saml_certificates"
+
+echo "-----> Checking SAML certificate directory"
+if [ ! -d $CERTIFICATE_DIR ]; then
+  mkdir -p $CERTIFICATE_DIR;
+fi
+
 echo "-----> Creating SAML Key File"
-cp "$ENV_DIR/SAML_KEY_FILE" "$APP_DIR/$PRODUCT/saml_certificates/private.key"
+cp "$ENV_DIR/SAML_KEY_FILE" "$CERTIFICATE_DIR/private.key"
 echo "-----> Creating SAML Cert File"
-cp "$ENV_DIR/SAML_CERT_FILE" "$APP_DIR/$PRODUCT/saml_certificates/public.cert"
+cp "$ENV_DIR/SAML_CERT_FILE" "$CERTIFICATE_DIR/public.cert"
