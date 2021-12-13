@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "SAML Certificates"
+exit 0

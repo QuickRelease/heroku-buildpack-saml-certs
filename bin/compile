@@ -1,0 +1,11 @@
+#!/bin/bash
+
+APP_DIR="$1"
+ENV_DIR="$3"
+
+PRODUCT=$(<"$ENV_DIR/PRODUCT")
+
+echo "-----> Creating SAML Key File"
+cp "$ENV_DIR/SAML_KEY_FILE" "$APP_DIR/$PRODUCT/saml_certificates/private.key"
+echo "-----> Creating SAML Cert File"
+cp "$ENV_DIR/SAML_CERT_FILE" "$APP_DIR/$PRODUCT/saml_certificates/public.cert"
