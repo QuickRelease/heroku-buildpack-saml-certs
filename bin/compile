@@ -5,7 +5,7 @@ ENV_DIR="$3"
 
 PRODUCT=$(<"$ENV_DIR/PRODUCT")
 
-CERTIFICATE_DIR="$APP_DIR/$PRODUCT/saml_certificates"
+CERTIFICATE_DIR="$APP_DIR/$PRODUCT/saml2_certificates"
 
 echo "-----> Checking SAML certificate directory"
 if [ ! -d $CERTIFICATE_DIR ]; then
